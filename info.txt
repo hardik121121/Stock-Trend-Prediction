@@ -1,0 +1,83 @@
+# Stock Trend Prediction Application
+
+## **Overview**
+This project is a Streamlit-based web application for predicting stock trends using a deep learning model (Stacked LSTM). The app fetches historical stock data from Yahoo Finance, processes it, and visualizes trends such as closing prices and moving averages. It also compares actual vs predicted prices using the trained model.
+
+---
+
+## **Features**
+1. **Historical Data Visualization**:
+   - Displays data from 2010 to 2024.
+   - Shows descriptive statistics of the dataset.
+2. **Charts**:
+   - Closing Price vs Time.
+   - 100-day and 200-day moving averages.
+   - Predictions vs Actual prices.
+3. **Prediction Model**:
+   - Uses a pre-trained Stacked LSTM model for stock price prediction.
+4. **Interactive Input**:
+   - Allows users to enter any valid stock ticker to fetch and analyze data.
+
+---
+
+## **Technical Stack**
+- **Frontend**: Streamlit
+- **Backend**: Python
+- **Libraries Used**:
+  - `numpy`, `pandas` for data manipulation.
+  - `matplotlib` for visualization.
+  - `yfinance` for fetching stock data.
+  - `scikit-learn` for data scaling.
+  - `tensorflow` for deep learning model.
+
+---
+
+## **Key Components**
+1. **Data Fetching**:
+   - Data is retrieved using Yahoo Finance for the user-input stock ticker and specified date range (2010-2024).
+   - Includes error handling for invalid tickers or missing data.
+
+2. **Data Processing**:
+   - Uses MinMaxScaler to normalize data for training and testing.
+   - Divides data into training (70%) and testing (30%) sets.
+
+3. **Model Loading and Prediction**:
+   - Loads a pre-trained Keras model (`keras_stock_trend_prediction_model.keras`).
+   - Generates predictions for the test dataset.
+
+4. **Visualizations**:
+   - Multiple plots for better understanding of stock trends.
+   - Original vs Predicted price comparison to evaluate model performance.
+
+---
+
+## **Usage Instructions**
+1. Clone the repository and navigate to the project directory.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the application:
+   ```bash
+   streamlit run App.py
+   ```
+4. Enter a valid stock ticker (e.g., MSFT for Microsoft) in the text input box.
+5. View visualizations and predictions.
+
+---
+
+## **Error Handling**
+- If no data is found for the entered ticker, the app displays an error message and halts further processing.
+
+---
+
+## **Future Improvements**
+1. Add support for more advanced technical indicators.
+2. Include multiple models for prediction comparison.
+3. Optimize the application for faster data fetching and visualization.
+
+---
+
+## **Credits**
+Developed with ❤️ by Hardik Arora
+
